@@ -1,38 +1,33 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.fullpage {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #dddddd;
+  min-height: 100vh;
+  justify-content: space-evenly;
+  align-content: center;
+}
+.iphone {
+  position: relative;
+  width: 360px;
+  box-shadow: 0px 0px 0px 11px #1f1f1f, 0px 0px 0px 13px #191919,
+    0px 0px 0px 20px #111;
+    scale: 0.9;
+    border-radius: 20px;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+@media screen and (max-width:764px) {
+    .fullpage-content{
+        display: none;
+    }
+    .iphone{
+        position: relative;
+        overflow: auto;
+        margin: 0px;
+        width: 100%;
+        border-radius: 0px;
+        box-shadow: none !important;
+        scale: 1;
+        ;
+    }
 }
