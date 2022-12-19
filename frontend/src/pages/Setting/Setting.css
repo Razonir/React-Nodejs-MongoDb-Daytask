@@ -1,0 +1,19 @@
+.setting{
+    display: flex;
+    flex-direction: column;
+}
+.link{
+    padding: 10px 0;
+    border-bottom: 1px solid #5cc0eb;
+    transition: 0.3s;
+    list-style: none;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+.link:hover{
+    background-color: #5cc0eb;
+    color: white;
+}
+

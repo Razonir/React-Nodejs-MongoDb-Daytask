@@ -1,0 +1,44 @@
+.menu{
+  width: 100%;
+  height: 136vh;
+  position: absolute;
+  background-color: #5cc0eb;
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  transition: 1s;
+  padding-right: 30px;
+}
+.menu .link{
+  list-style: none;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+}
+.menu a:hover{
+  color: #000;
+}
+
+.top{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #5cc0eb;
+  padding-bottom: 40px;
+  }
+  .col{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      cursor: pointer;
+  }
+  .user{
+      margin: 10px 0;
+      width: 60ox;
+      height: 60px;
+  }
+  .icon{
+      width: 25px;
+  }

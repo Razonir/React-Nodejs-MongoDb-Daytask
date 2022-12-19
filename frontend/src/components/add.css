@@ -1,0 +1,43 @@
+.background {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    background-color: rgba(0, 0, 0, 0.353);
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    animation: fade 1s;
+}
+
+.add {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 20px;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    box-shadow: rgba(0, 0, 0, 0.197) 0 0 50px;
+    text-align: center;
+    animation: fadedown 0.4s forwards;
+}
+
+@keyframes fadedown {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: translateY(40px)  translate(-50%, -50%);
+    }
+}
+@keyframes fade {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

@@ -1,0 +1,41 @@
+.item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: #D9D9D9 1px solid;
+    border-radius: 12px;
+    padding: 10px 10px;
+    font-size: 11px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    color: #696969;
+    position: relative;
+    overflow: hidden;
+}
+.item:hover{
+    background-color: rgb(245, 245, 245);
+}
+.iconitem {
+    width: 13px !important;
+}
+.title{
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+}
+.action{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5cc0eb;
+    color: white;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 0 20px 0 0;
+    font-size: 20px;
+}
