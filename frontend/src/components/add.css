@@ -1,13 +1,4 @@
-.background {
-    position: fixed;
-    top: 0%;
-    left: 0%;
-    background-color: rgba(0, 0, 0, 0.353);
-    width: 100vw;
-    height: 100vh;
-    z-index: 2;
-    animation: fade 1s;
-}
+
 
 .add {
     position: fixed;
@@ -25,19 +16,22 @@
 }
 
 @keyframes fadedown {
-    from{
+    from {
         opacity: 0;
     }
-    to{
+
+    to {
         opacity: 1;
-        transform: translateY(40px)  translate(-50%, -50%);
+        transform: translateY(40px) translate(-50%, -50%);
     }
 }
+
 @keyframes fade {
-    from{
+    from {
         opacity: 0;
     }
-    to{
+
+    to {
         opacity: 1;
     }
 }
