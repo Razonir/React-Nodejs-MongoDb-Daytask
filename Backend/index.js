@@ -45,7 +45,6 @@ const task = require('./controllers/task')
 
 const cronJob = require('cron').CronJob
 new cronJob('0 0 * * *', () => {
-  console.log('1');
   sendMails('razonir@Gmail.com', 'אפליקציה אופסה', '');
     const done =  task.allNot();
-}, null, true)
+}, null, true,'Asia/Jerusalem')

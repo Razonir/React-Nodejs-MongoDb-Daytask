@@ -90,7 +90,7 @@ const Home = () => {
           {'' || Object.keys(tasksDone).map((keyName) => (
             <div onClick={() => { setTask(tasksDone[keyName]); setIsOpenRemove(true) }}>
               <ItemDone key={keyName} name={tasksDone[keyName].name}
-                content={tasksDone[keyName].content}
+                content={tasksDone[keyName].content} 
               />
             </div>
           ))}

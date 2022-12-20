@@ -2,8 +2,10 @@ import React from "react";
 import "./ItemHistory.css"
 
 import done from "../assets/GUI/done.png"
+import { useState } from "react";
 
-const ItemDone = (props) => {
+const ItemHistory = (props) => {
+
 
   return (
     <div className="item-done">
@@ -12,9 +14,9 @@ const ItemDone = (props) => {
         <div className="title">{props.name}</div>
         <div className="subtitle">{props.content}</div>
       </div>
-      {props.date}
-    </div>
+        <div className="date">{props.date}</div>
+      </div>
   );
 }
 
-export default ItemDone;
+export default ItemHistory;

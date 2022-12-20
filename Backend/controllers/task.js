@@ -41,12 +41,19 @@ exports.done = async (req, res, next) => {
             res.status(400).send({ message: "Task not found" });
             return;
         }
-        let date = new Date();
+        var date = new Date();
+        var dateStr =
+          ("00" + (date.getMonth() + 1)).slice(-2) + "/" +
+          ("00" + date.getDate()).slice(-2) + "/" +
+          date.getFullYear() + " " +
+          ("00" + date.getHours()).slice(-2) + ":" +
+          ("00" + date.getMinutes()).slice(-2) + ":" +
+          ("00" + date.getSeconds()).slice(-2);
         let historytask = new historyTaskModel({
             name: task.name,
             content: task.content,
             status: task.status,
-            date: date,
+            date: dateStr,
             userid: task.userid
         });
         await historytask.save();
