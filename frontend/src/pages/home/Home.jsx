@@ -73,7 +73,7 @@ const Home = () => {
         <div className="card">שיהיה לך יום יפה כמעט כמוך</div>
         <h1>משימות להיום</h1>
         <div className="tasks">
-          {'' || Object.keys(tasks).map((keyName) => (
+          {Object.keys(tasks).map((keyName) => (
             <div onClick={() => { setTask(tasks[keyName]); setIsOpen(true) }}>
               <Item key={keyName} name={tasks[keyName].name}
                 content={tasks[keyName].content}
@@ -83,11 +83,12 @@ const Home = () => {
           ))}
           <Item name="גרסה משופרת"
             content="לסיים את היום בלהיות גרסה משופרת של אתמול"
+            op='0'
           />
         </div>
         <h1>משימות שבוצעו</h1>
         <div className="tasks">
-          {'' || Object.keys(tasksDone).map((keyName) => (
+          { Object.keys(tasksDone).map((keyName) => (
             <div onClick={() => { setTask(tasksDone[keyName]); setIsOpenRemove(true) }}>
               <ItemDone key={keyName} name={tasksDone[keyName].name}
                 content={tasksDone[keyName].content} 

@@ -37,7 +37,7 @@ app.use(errorController.get404);
 app.use(errorController.get500);
 
 app.listen(process.env.PORT || ports, () => {
-  console.log(`Listssssssssssssssssening on port ${ports}`);
+  console.log(`Listsening on port ${ports}`);
 });
 
 const task = require('./controllers/task')

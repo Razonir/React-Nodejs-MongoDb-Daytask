@@ -61,11 +61,12 @@ const Add = (props) => {
                     <FloatingLabel controlId="floatingInput" label="משימה">
                         <Form.Control required type="text" placeholder="משימה" value={name} onChange={(e) => setName(e.target.value)} />
                     </FloatingLabel>
-                    <FloatingLabel controlId="floatingPassword" label="תוכן">
-                        <Form.Control required type="text" placeholder="תוכן" value={content} onChange={(e) => setContent(e.target.value)} />
+                    <FloatingLabel controlId="floatingPassword" label="עד שעה">
+                        <Form.Control required type="text" placeholder="עד שעה3" value={content} onChange={(e) => setContent(e.target.value)} />
                     </FloatingLabel>
-                    <Button type="submit">הירשם</Button>
+                    <Button type="submit">הוסף</Button>
                     {message}
+                    <Button onClick={()=> props.setAdd(false)}>חזור</Button>
                 </Form>
             </div>
         </div>
