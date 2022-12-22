@@ -33,4 +33,4 @@ You are welcome to run and try
 - Go to frontend folder `npm run start` for the client
 
 ## Screenshot from the project
-![](https://github.com/Razonir/React-Nodejs-MongoDb-Daytask/blob/master/image%20(1).jpgf)
+![](https://raw.githubusercontent.com/Razonir/React-Nodejs-MongoDb-Daytask/master/image.png)
