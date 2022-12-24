@@ -4,6 +4,7 @@ const smtpTransport = require('nodemailer-smtp-transport');
 
 const OAuth2 = google.auth.OAuth2;
 
+// tempemail
 const user = 'razoidf@gmail.com'
 
 let transporter = nodemailer.createTransport(smtpTransport({
