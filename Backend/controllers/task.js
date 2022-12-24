@@ -5,7 +5,7 @@ exports.remove = async (req, res, next) => {
     console.log('removetask')
     try {
         const body = req.body;
-        const _id = body?._id;
+        const _id = body._id;
 
         if (_id == null) {
             res.status(400).send({ message: "חסר ID" });
@@ -30,8 +30,8 @@ exports.done = async (req, res, next) => {
 
     try {
         const body = req.body;
-        const _id = body?._id;
-        const userid = req?._id;
+        const _id = body._id;
+        const userid = req._id;
         if (_id == null) {
             res.status(400).send({ message: "Missing id" });
             return;
@@ -71,9 +71,9 @@ exports.add = async (req, res, next) => {
 
     try {
         const body = req.body;
-        const name = body?.name;
-        const content = body?.content;
-        const userid = req?._id;
+        const name = body.name;
+        const content = body.content;
+        const userid = req._id;
         if (name == null) {
             res.status(400).send({ message: "Missing name" });
             return;
@@ -124,7 +124,7 @@ exports.getOne = async (req, res, next) => {
 
     try {
         const body = req.body;
-        const id = body?._id;
+        const id = body._id;
         let tasks = await taskModel.findOne({ _id: id });
         res.status(200).json(tasks);
     } catch {

@@ -8,8 +8,8 @@ exports.login = async (req, res, next) => {
     console.log('login');
     try {
         const body = req.body;
-        const email = body?.email;
-        const password = body?.password;
+        const email = body.email;
+        const password = body.password;
         if (email == null) {
             res.status(400).send({ message: "Missing email" });
             return;
@@ -49,8 +49,8 @@ exports.signup = async (req, res, next) => {
         const body = req.body;
         console.log(body)
 
-        const email = body?.email;
-        const password = body?.password;
+        const email = body.email;
+        const password = body.password;
         if (email == null) {
             res.status(400).send({ message: "אימייל חסר" });
             return;
@@ -82,7 +82,7 @@ exports.reset = async (req, res, next) => {
     console.log('reset');
     try {
         const body = req.body;
-        const email = body?.email;
+        const email = body.email;
         const alpha = 'abcdefghijklmnopqrstuvwxyz';
         const calpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         const num = '1234567890';
