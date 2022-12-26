@@ -1,17 +1,14 @@
 import { baseUrl } from './url'
+import { useFetchWrapper } from "../util/fetch-wrapper";
 
-export async function remove() {
-  try {
-    let token = localStorage.getItem('token');
-    const myHeaders = new Headers();
-    myHeaders.append('Content-Type', 'application/json');
-    myHeaders.append('Authorization', token);
-    let res = await fetch(baseUrl + "/user/remove", {
-      method: "POST",
-      headers: myHeaders
-    });
-    console.log(res)
-  } catch (err) {
-    console.log(err);
+
+export function UserService() {
+  const fetchWarpper = useFetchWrapper();
+  const url = baseUrl + "/user/"
+  return {
+    remove
+  }
+  function remove() {
+    return fetchWarpper.post(url + 'remove');
   }
 }

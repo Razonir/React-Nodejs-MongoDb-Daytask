@@ -6,7 +6,7 @@ import Popup from "../../components/Popup";
 import PopupRemove from "../../components/PopupRemove";
 import Add from "../../components/Add";
 
-import { getUserByJWT, getUserDoneByJWT } from '../../services/TaskService'
+import { TaskService } from '../../services/TaskService'
 import { useEffect } from "react";
 import Header from "../../Layout/Header/Header";
 
@@ -25,13 +25,13 @@ const Home = () => {
   const [tasksDone, setTasksDone] = useState('null');
 
   const data = async () => {
-    setTasks(await getUserByJWT());
-    setTasksDone(await getUserDoneByJWT());
+    setTasks(await TaskService().getUserByJWT());
+    setTasksDone(await TaskService().getUserDoneByJWT());
     console.log('tasks')
   }
 
   const addTask = async () => {
-    setTasks(await getUserByJWT());
+    setTasks(await TaskService().getUserByJWT());
     console.log('add')
   }
 

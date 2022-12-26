@@ -1,23 +1,14 @@
 import { baseUrl } from './url'
+import { useFetchWrapper } from "../util/fetch-wrapper";
 
-export async function getHistory() {
-    let d;
-    let token = localStorage.getItem('token');
-    const myHeaders = new Headers();
-    myHeaders.append('Content-Type', 'application/json');
-    myHeaders.append('Authorization', token);
 
-    try {
-        await fetch(baseUrl + "/historytask/user", {
-            method: "GET",
-            headers: myHeaders
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                d = data;
-            });
-        return d;
-    } catch (err) {
-        return []
+export function TaskHistoryService() {
+    const fetchWarpper = useFetchWrapper();
+    const url = baseUrl +"/historytask/"
+    return{
+        getHistory
+    }
+    function getHistory() {
+        return fetchWarpper.get(url + 'user/');
     }
 }

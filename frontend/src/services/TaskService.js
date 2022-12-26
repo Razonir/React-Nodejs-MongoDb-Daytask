@@ -1,100 +1,33 @@
 import { baseUrl } from './url'
+import { useFetchWrapper } from "../util/fetch-wrapper";
 
-export async function getAll() {
-    let d;
-    try {
-        await fetch(baseUrl+"/task/all", {
-            method: "GET"
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                d = data;
-            });
-        return d;
-    } catch (err) {
-        return []
+export function TaskService() {
+    const fetchWarpper = useFetchWrapper();
+    const url = baseUrl + "/task/"
+    return {
+        getAll,
+        getUserByJWT,
+        getUserDoneByJWT,
+        remove,
+        done
     }
-}
-
-export async function getUserByJWT() {
-    let d;
-    let token = localStorage.getItem('token');
-    const myHeaders = new Headers();
-    myHeaders.append('Content-Type', 'application/json');
-    myHeaders.append('Authorization', token);
-
-    try {
-        await fetch(baseUrl+"/task/user", {
-            method: "GET",
-            headers: myHeaders
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                d = data;
-            });
-        return d;
-    } catch (err) {
-        return []
+    function getAll() {
+        return fetchWarpper.get(url + 'all/');
     }
-}
-
-export async function getUserDoneByJWT() {
-    let d;
-    let token = localStorage.getItem('token');
-    const myHeaders = new Headers();
-    myHeaders.append('Content-Type', 'application/json');
-    myHeaders.append('Authorization', token);
-
-    try {
-        await fetch(baseUrl+"/task/userdone", {
-            method: "GET",
-            headers: myHeaders
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                d = data;
-            });
-        return d;
-    } catch (err) {
-        return []
+    function getUserByJWT() {
+        return fetchWarpper.get(url + 'user/');
     }
-}
-
-export async function remove(id) {
-    try {
-        let token = localStorage.getItem('token');
-        const myHeaders = new Headers();
-        myHeaders.append('Content-Type', 'application/json');
-        myHeaders.append('Authorization', token);
-        let res = await fetch(baseUrl + "/task/remove", {
-            method: "POST",
-            headers: myHeaders,
-            body: JSON.stringify({
-                _id: id,
-            }),
-        });
-        console.log(res)
-    } catch (err) {
-        console.log(err);
+    function getUserDoneByJWT() {
+        return fetchWarpper.get(url + 'userdone/');
     }
+    function remove(id) {
+        return fetchWarpper.post(url + 'remove/', {_id: id})
+    }
+    function done(id) {
+        return fetchWarpper.post(url + 'done/', {_id: id})
+    }
+
 }
 
 
-export async function done(id) {
-    try {
-        let token = localStorage.getItem('token');
-        const myHeaders = new Headers();
-        myHeaders.append('Content-Type', 'application/json');
-        myHeaders.append('Authorization', token);
-        let res = await fetch(baseUrl+"/task/done", {
-            method: "POST",
-            headers: myHeaders,
-            body: JSON.stringify({
-                _id: id,
-            }),
-        });
-        console.log(res)
-    } catch (err) {
-        console.log(err);
-    }
-}
+

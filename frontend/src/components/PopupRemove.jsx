@@ -1,6 +1,6 @@
 import React from "react";
 import "./PopupRemove.css"
-import { remove } from '../services/TaskService'
+import { TaskService } from '../services/TaskService'
 
 const PopupRemove = (props) => {
 
@@ -10,7 +10,7 @@ const PopupRemove = (props) => {
                 <div className="popupname">{props.name}</div>
                 <div className="popupcontent">{props.content}</div>
                 <div className="popupbtns">
-                    <div className="popupbtn" onClick={() => { remove(props.id); props.data(); }}>
+                    <div className="popupbtn" onClick={() => { TaskService().remove(props.id); props.data(); }}>
                         הסר לתמיד
                     </div>
                 </div>

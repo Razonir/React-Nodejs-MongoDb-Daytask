@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./History.css";
 import ItemHistory from "../../components/ItemHistory";
 
-import { getHistory } from '../../services/TaskHistoryService'
+import { TaskHistoryService } from '../../services/TaskHistoryService'
 import { useEffect } from "react";
 import Header from "../../Layout/Header/Header";
 
@@ -13,7 +13,7 @@ const History = () => {
     const [tasks, setTasks] = useState('null');
 
     const data = async () => {
-        setTasks(await getHistory());
+        setTasks(await TaskHistoryService().getHistory());
     }
 
     useEffect(() => {
